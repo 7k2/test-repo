@@ -1,0 +1,11 @@
+os: osx
+language: cpp
+compiler: clang
+before_install:
+  - brew update
+install:
+  - brew install sdl2
+  - brew install openal-soft
+  - brew install enet
+  - brew install jpeg
+script: mkdir build && cd build && cmake .. && make
