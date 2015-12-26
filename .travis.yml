@@ -8,4 +8,8 @@ install:
   - brew install openal-soft
   - brew install enet
   - brew install jpeg
-script: mkdir build && cd build && cmake .. && make
+before_script: ./autogen.sh
+script:
+  - export CPPFLAGS='-I/usr/local/include'
+  - export LDFLAGS='-L/usr/local/lib'
+  - mkdir build && cd build && ../configure && make
